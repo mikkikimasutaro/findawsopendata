@@ -1,0 +1,13 @@
+type OpenData @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  Name: String
+  Description: String
+  Documentation: String
+  Contact: String
+  ManagedBy: String
+  UpdateFrequency: String
+  Tags: AWSJSON
+  License: String
+  Resources: AWSJSON
+  DataAtWork: AWSJSON
+}

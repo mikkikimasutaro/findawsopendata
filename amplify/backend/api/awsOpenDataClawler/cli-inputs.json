@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "awsOpenDataClawler",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/tmp/amplify-d7b96151-7205-48d3-9d5a-c87d5c15e327/amplify/backend/api/awsOpenDataClawler/schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "keyDescription": "api key description",
+      "expirationTime": 30
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "AWS_IAM"
+      }
+    ],
+    "conflictResolution": {
+      "defaultResolutionStrategy": {
+        "type": "AUTOMERGE"
+      }
+    }
+  }
+}
