@@ -14,7 +14,6 @@ import Typography from '@mui/material/Typography';
 import InfoIcon from '@mui/icons-material/Info';
 import HomeIcon from '@mui/icons-material/Home';
 import ResponsiveDrawerListItem from './ResponsiveDrawerListItem';
-import { withStyles } from '@mui/material/styles';
 
 const drawerWidth = 240;
 
@@ -35,7 +34,7 @@ function ResponsiveDrawer(props) {
           <ResponsiveDrawerListItem
             to="/info"
             icon={<InfoIcon />}
-            text="本サイトについて"
+            text="About"
           />
         </List>
         <Divider />
@@ -43,7 +42,7 @@ function ResponsiveDrawer(props) {
           <ResponsiveDrawerListItem
             to="/"
             icon={<HomeIcon />}
-            text="トップページ"
+            text="Home"
           />    
       </List>
     </div>
@@ -72,7 +71,7 @@ function ResponsiveDrawer(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Find AWS OpenData
+            Find AWS Open Data
           </Typography>
         </Toolbar>
       </AppBar>

@@ -1,12 +1,8 @@
 import '../index.css';
 import './Main.css';
-import React, { useState } from 'react';
-import { withStyles } from '@mui/material/styles';
-import PropTypes from 'prop-types';
-import MenuItem from '@mui/material/MenuItem';
+import React from 'react';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
 import { API, graphqlOperation } from 'aws-amplify';
 import listOpenData from '../graphql/queries';
 
@@ -14,19 +10,6 @@ import listOpenData from '../graphql/queries';
 import OpenData from '../components/OpenData';
 import OpenDataList from '../components/OpenDataList';
 import tags from '../components/TagList.json';
-
-
-
-const columns = [
-  { field: 'schoolName', headerName: '学校名', width: 180 },
-  { field: 'address', headerName: '住所', width: 180 },
-  { field: 'lyrics', headerName: '歌詞', width: 180 },
-
-];
-const searchfields =[];
-for (var i = 0; i < columns.length; i++) {
-  searchfields.push(<MenuItem key={i+1} value={i+1}>{columns[i].headerName}</MenuItem>);
-}
 
 
 async function asyncOpenDataList (filterValue){
@@ -49,20 +32,8 @@ class Main extends React.Component {
   render() {
 
   const OpenDataItems = [];
-  var result = [];
 
   const tagList = tags["tags"];
-
-  // Material-ui関連
-  const { classes } = this.props;
-
-  /**
-  const handleChange = (event, value) => {
-    for (let index=0; index<value.length; index++){
-      console.log(value[index]);
-    }
-  }
-  */
 
   const handleChange = (event, value)  => {
     asyncOpenDataList(value).then(
@@ -80,7 +51,7 @@ class Main extends React.Component {
   } 
   return (
     <div className="main">
-      <img src="/images/logo_720x720.png" alt="title" className="titleImage" />
+      <img src="/images/logo.png" alt="title" className="titleImage" />
 
       <Autocomplete className="main"
         variant="outlined"

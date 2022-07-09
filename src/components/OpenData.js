@@ -1,14 +1,10 @@
 import "./OpenData.css"
 import React from 'react';
 import { styled } from '@mui/material/styles';
-import PropTypes from 'prop-types';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import Avatar from '@mui/material/Avatar';
-import ContactPageIcon from '@mui/icons-material/ContactPage';
-import LinkIcon from '@mui/icons-material/Link';
 import Collapse from '@mui/material/Collapse';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import IconButton from '@mui/material/IconButton';
@@ -100,11 +96,26 @@ function OpenData(props) {
           <Typography variant="body1" color="body1" align="left" >
             {Tags}
           </Typography>
+          <br />
           <Typography variant="h6" color="subtitle2" align="left" >
             Contact: 
           </Typography>
           <Typography variant="body1" color="body1" align="left" >
             {Contact}
+          </Typography>
+          <br />
+          <Typography variant="h6" color="subtitle2" align="left" >
+            Resources: 
+          </Typography>
+          <Typography variant="body1" color="body1" align="left" >
+            {Resources}
+          </Typography>
+          <br />
+          <Typography variant="h6" color="subtitle2" align="left" >
+            DataAtWork: 
+          </Typography>
+          <Typography variant="body1" color="body1" align="left" >
+            {DataAtWork}
           </Typography>
         </CardContent>
         </Collapse>
