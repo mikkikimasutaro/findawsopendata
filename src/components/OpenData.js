@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import Collapse from '@mui/material/Collapse';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import IconButton from '@mui/material/IconButton';
-import reactStringReplace from 'react-string-replace';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -21,16 +20,10 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-const replaceHttpText = text => {
-  return reactStringReplace(text, /(https?:\/\/\S+)/g, (match, i) => (
-    <a key={match + i} href={match}>{match}</a>
-  ));
-}
 
 
 function OpenData(props) {
   const { Name, Description, Documentation, Contact, ManagedBy, UpdateFrequency, Tags, License, Resources, DataAtWork } = props;
-  console.log(replaceHttpText(ManagedBy));
   
   const [expanded, setExpanded] = React.useState(false);
 
@@ -60,13 +53,13 @@ function OpenData(props) {
           <ExpandMoreIcon />
         </ExpandMore>
       </CardActions>
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
+        <Collapse className="collapse" in={expanded} timeout="auto" unmountOnExit>
+        <CardContent className="collapse">
           <Typography variant="h6" color="subtitle2" align="left" >
             Documantation:
           </Typography>
           <Typography variant="body1" color="body1" align="left" >
-             {Documentation}
+          <a href={Documentation}>{Documentation}</a>
           </Typography>
           <br />
           <Typography variant="h6" color="subtitle2" align="left" >

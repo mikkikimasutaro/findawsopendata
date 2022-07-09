@@ -3,3 +3,7 @@
     margin-bottom: 10px;
     border-color: #000;
 }
+
+.collapse {
+    width: fit-content;
+}

@@ -1,3 +1,4 @@
+import './ResponsiveDrawer.css'
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -33,6 +34,7 @@ function ResponsiveDrawer(props) {
       <List>
           <ResponsiveDrawerListItem
             to="/info"
+            onClick={handleDrawerToggle}
             icon={<InfoIcon />}
             text="About"
           />
@@ -41,6 +43,7 @@ function ResponsiveDrawer(props) {
         <List>
           <ResponsiveDrawerListItem
             to="/"
+            onClick={handleDrawerToggle}
             icon={<HomeIcon />}
             text="Home"
           />    
@@ -111,7 +114,7 @@ function ResponsiveDrawer(props) {
         component="main"
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
-        <main >
+        <main className="content">
           {props.children}
         </main>
       </Box>

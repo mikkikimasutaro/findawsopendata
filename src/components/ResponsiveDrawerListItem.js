@@ -8,8 +8,8 @@ import ListItemText from '@mui/material/ListItemText';
 // Route関連
 import { Link } from 'react-router-dom'
 
-const ResponsiveDrawerListItem = ({to, icon, text}) => (
-  <ListItem button component={Link} to={to} >
+const ResponsiveDrawerListItem = ({to, onClick, icon, text}) => (
+  <ListItem button component={Link} to={to} onClick={onClick} >
     <ListItemIcon>
       {icon}
     </ListItemIcon>
@@ -19,6 +19,7 @@ const ResponsiveDrawerListItem = ({to, icon, text}) => (
 
 ResponsiveDrawerListItem.propTypes = {
   to: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
   icon: PropTypes.object.isRequired,
   text: PropTypes.string.isRequired,
 };
