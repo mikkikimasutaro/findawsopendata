@@ -1,5 +1,6 @@
-import Main from "./containers/Main"
+import Main from "./containers/Main";
 import Info from './containers/Info';
+import DropDirectory from './containers/DropDirectory';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import ResponsiveDrawer from './components/ResponsiveDrawer';
 import Amplify from 'aws-amplify';
@@ -16,6 +17,7 @@ function App() {
                     <Routes>
                         <Route path='/' element={<Main />} />
                         <Route path='/info' element={<Info />} />
+                        {/**<Route path='/drop' element={<DropDirectory />} />*/}
                     </Routes>
                     </ResponsiveDrawer>
                 </div>

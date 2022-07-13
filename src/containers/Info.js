@@ -1,3 +1,4 @@
+import './Info.css';
 import React from 'react';
 
 import Paper from '@mui/material/Paper';
@@ -7,27 +8,31 @@ function Info() {
 
     return (
         <div>
-            <h2>校歌PORTALについて</h2>
+            <h2>このサイトについて</h2>
             <div >
-                <Paper >
+                <Paper className="paper">
+                <Typography variant="headline" component="h3" >
+                        Find AWS Open Dataとは
+                </Typography>
+                <Typography component="p" >
+                        AWSが公開するオープンデータをキーワードで検索できるページです。データは <a href="https://github.com/awslabs/open-data-registry">AWS LAB repogitory pages</a>　から取得しています。
+                </Typography>
+                </Paper>
+                <Paper className="paper">
                 <Typography variant="headline" component="h3">
-                        校歌PORTALとは
-                    </Typography>
-                    <Typography component="p">
-                        全国の学校の校歌の情報をまとめています。
-                    </Typography>
-                    <Typography variant="headline" component="h3">
-                        著作権について
-                    </Typography>
-                    <Typography component="p">
-                        著作権に注意を払い情報を収集しています。本ページ内の校歌の情報はすべて著作者に帰属し
-                    </Typography>
-                    <Typography variant="headline" component="h3">
-                        情報提供のお願い
-                    </Typography>
-                    <Typography component="p">
-                        小学校・中学校・高校問わず校歌の情報を提供いただける方を募集しております。
-                    </Typography>
+                        本アプリの目的
+                </Typography>
+                <Typography component="p" >
+                        このアプリは、React ＋　AWS Amplify（＋App Sync,DynamoDB）で構成されており、これらの技術を用いてSingle Page Applicationを作成するためのサンプルとして作成しました。                        
+                </Typography>
+                </Paper>
+                <Paper className="paper">
+                <Typography variant="headline" component="h3">
+                        ソースコード・説明など
+                </Typography>
+                <Typography component="p" >
+                        ソースコード：<a href="https://github.com/mikkikimasutaro/findawsopendata">Github</a>
+                </Typography>
                 </Paper>
             </div>
         </div>

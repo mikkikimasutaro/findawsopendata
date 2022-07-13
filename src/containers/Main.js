@@ -1,31 +1,28 @@
-import '../index.css';
 import './Main.css';
 import React from 'react';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import { API, graphqlOperation } from 'aws-amplify';
-import listOpenData from '../graphql/queries';
+import listOpenDataQuery from '../graphql/queries';
 
-// OpenDataList取得
 import OpenData from '../components/OpenData';
 import OpenDataList from '../components/OpenDataList';
+
+// search condition list 
 import tags from '../components/TagList.json';
 
-
+// execute GraphQL
 async function asyncOpenDataList (filterValue){
   console.log(filterValue);
   const filter =  {filter: {Tags : {contains: filterValue}}};
-  return await API.graphql(graphqlOperation(listOpenData, filter));
+  return await API.graphql(graphqlOperation(listOpenDataQuery, filter));
 }
 
 class Main extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      searchfield: 1,
-      inputText: [],
-      searchResult: [],
-      tabValue: 0
+      searchResult: []
     };
   }
 
@@ -51,9 +48,9 @@ class Main extends React.Component {
   } 
   return (
     <div className="main">
-      <img src="/images/logo.png" alt="title" className="titleImage" />
+      <img src="/images/logo_1200x800.png" alt="title" className="titleImage" />
 
-      <Autocomplete className="main"
+      <Autocomplete className="autocomplete"
         variant="outlined"
         options={tagList}
         onChange={handleChange}
