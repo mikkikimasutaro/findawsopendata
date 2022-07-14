@@ -3,11 +3,17 @@
 
 ## 機能
 AWSが提供するオープンデータのリストをキーワードで検索できます。
-AWS LABが公開する以下のページをクロールして情報を取得しています。
+AWS LABが公開する以下のページをバックエンドでクロールしてDynamoDBに保存し、AWS AppSyncを用いたGraphQLでDynamoDBから情報を取得しています。
 https://github.com/awslabs/open-data-registry
 
-### メモ
-#### Tagの抽出、頻出順にソート
-$ jq '.Tags' *.json > tags.json
-$ sort tags.json > tags_sorted.txt
-$ uniq -c tags_sorted.txt | sort -nr > tags_uniq.txt
+## ソフトウェア構成
+ - React 18.2.0 : 画面アプリ本体
+ - AWS Amplify 4.3.26 : Build、Deploy
+    - AppSync : GraphQL
+    - DynamoDB  : オープンデータの保存
+
+
+## License
+MIT License
+
+Copyright (c) 2022 Kensuke Kanamori
