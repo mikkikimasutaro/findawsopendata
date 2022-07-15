@@ -48,7 +48,7 @@ class Main extends React.Component {
   } 
   return (
     <div className="main">
-      <img src="/images/logo_1200x800.png" alt="title" className="titleImage" />
+      <img src="/images/logo_320x320.png" alt="title" className="titleImage" />
 
       <Autocomplete className="autocomplete"
         variant="outlined"
