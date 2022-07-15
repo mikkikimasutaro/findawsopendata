@@ -2,7 +2,7 @@ import React from 'react';
 
 function OpenDataList({openDataList}) {
   return (
-    <div>
+    <div id="cardList">
       {openDataList}
     </div>
   );

@@ -1,9 +1,15 @@
 .card {
     margin-top: 10px;
     margin-bottom: 10px;
+    width: 80%;
+    min-width: 125px;
+    max-width: 750px;    
     border-color: #000;
 }
 
-.collapse {
-    width: fit-content;
+#cardList {
+    flex:1;
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
 }

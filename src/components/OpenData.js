@@ -8,6 +8,8 @@ import Typography from '@mui/material/Typography';
 import Collapse from '@mui/material/Collapse';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import IconButton from '@mui/material/IconButton';
+import ReactMarkdown from 'react-markdown'
+
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -19,7 +21,6 @@ const ExpandMore = styled((props) => {
     duration: theme.transitions.duration.shortest,
   }),
 }));
-
 
 
 function OpenData(props) {
@@ -37,11 +38,6 @@ function OpenData(props) {
           <Typography variant="headline" component="h2">
             {Name}
           </Typography>
-          {Description !== '' &&
-            <Typography color="subtitle1" align="left" >
-              {Description}
-            </Typography>
-          }
         </CardContent>
         <CardActions disableSpacing>
         <ExpandMore
@@ -53,14 +49,20 @@ function OpenData(props) {
           <ExpandMoreIcon />
         </ExpandMore>
       </CardActions>
-        <Collapse className="collapse" in={expanded} timeout="auto" unmountOnExit>
-        <CardContent className="collapse">
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent >
+          <Typography color="subtitle1" align="left" >
+            <ReactMarkdown>
+              {Description}
+            </ReactMarkdown>
+          </Typography>
           <Typography variant="h6" color="subtitle2" align="left" >
             Documantation:
           </Typography>
           <Typography variant="body1" color="body1" align="left" >
           <a href={Documentation}>{Documentation}</a>
           </Typography>
+          {/**
           <br />
           <Typography variant="h6" color="subtitle2" align="left" >
             License: 
@@ -98,18 +100,23 @@ function OpenData(props) {
           </Typography>
           <br />
           <Typography variant="h6" color="subtitle2" align="left" >
-            Resources: 
+             Resources: 
           </Typography>
           <Typography variant="body1" color="body1" align="left" >
-            {Resources}
+            <ReactMarkdown>
+              {Resources}
+            </ReactMarkdown>
           </Typography>
           <br />
           <Typography variant="h6" color="subtitle2" align="left" >
             DataAtWork: 
           </Typography>
           <Typography variant="body1" color="body1" align="left" >
-            {DataAtWork}
+            <ReactMarkdown>
+              {DataAtWork}
+            </ReactMarkdown>
           </Typography>
+         */}
         </CardContent>
         </Collapse>
       </Card>

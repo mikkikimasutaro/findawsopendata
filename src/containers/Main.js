@@ -13,7 +13,7 @@ import tags from '../components/TagList.json';
 
 // execute GraphQL
 async function asyncOpenDataList (filterValue){
-  console.log(filterValue);
+  // console.log(filterValue);
   const filter =  {filter: {Tags : {contains: filterValue}}};
   return await API.graphql(graphqlOperation(listOpenDataQuery, filter));
 }
@@ -35,14 +35,14 @@ class Main extends React.Component {
   const handleChange = (event, value)  => {
     asyncOpenDataList(value).then(
       value => {
-       console.log(value.data.listOpenData.items);
+       // console.log(value.data.listOpenData.items);
        const listOpenDataLength = value.data.listOpenData.items.length; 
        for (let index=0; index<listOpenDataLength; index++){
         OpenDataItems.push(<OpenData key={index} {...value.data.listOpenData.items[index]}/>);
        }
 
        this.setState({ "searchResult" : OpenDataItems});
-       console.log(this.state.searchResult); 
+       // console.log(this.state.searchResult); 
       }
       );
   } 
